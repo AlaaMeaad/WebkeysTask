@@ -10,7 +10,8 @@
         android:label="Articles" >
         <action
             android:id="@+id/action_newsListFragment_to_articleDetailsFragment"
-            app:destination="@id/articleDetailsFragment" />
+            app:destination="@id/articleDetailsFragment"
+            app:popUpTo="@id/newsListFragment" />
     </fragment>
     <fragment
         android:id="@+id/articleDetailsFragment"
@@ -19,5 +20,21 @@
         <argument
             android:name="article"
             app:argType="com.task.newsapptask.models.ArticlesItem" />
+        <action
+            android:id="@+id/action_articleDetailsFragment_to_newsListFragment"
+            app:destination="@id/newsListFragment" />
+        <action
+            android:id="@+id/action_articleDetailsFragment_to_showPhotoFragment"
+            app:destination="@id/showPhotoFragment" />
+    </fragment>
+    <fragment
+
+        android:id="@+id/showPhotoFragment"
+        android:name="com.task.newsapptask.ui.ShowPhotoFragment"
+        android:label="ShowPhotoFragment" >
+    <argument
+        android:name="article"
+        app:argType="com.task.newsapptask.models.ArticlesItem" />
+
     </fragment>
 </navigation>
