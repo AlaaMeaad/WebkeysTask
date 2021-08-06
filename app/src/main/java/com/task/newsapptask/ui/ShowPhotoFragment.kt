@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import com.task.newsapptask.R
 import com.task.newsapptask.databinding.FragmentArticleDetailsBinding
 import com.task.newsapptask.databinding.FragmentShowPhotoBinding
+import uk.co.senab.photoview.PhotoViewAttacher
 
 
 class ShowPhotoFragment : Fragment() {
@@ -26,6 +27,9 @@ class ShowPhotoFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentShowPhotoBinding.inflate(inflater, container, false)
         binding.ivFrgshowPhoto.setOnClickListener {
+            val pAttacher: PhotoViewAttacher
+            pAttacher = PhotoViewAttacher(binding.ivFrgshowPhoto)
+            pAttacher.update()
         }
         return binding.root
     }
